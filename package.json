@@ -1,0 +1,23 @@
+{
+  "name": "slack-git-command",
+  "version": "1.0.0",
+  "description": "Simple web service for slack command",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FuriKuri/slack-git-command.git"
+  },
+  "keywords": [
+    "slack",
+    "git"
+  ],
+  "author": "Theo Pack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FuriKuri/slack-git-command/issues"
+  },
+  "homepage": "https://github.com/FuriKuri/slack-git-command#readme"
+}
