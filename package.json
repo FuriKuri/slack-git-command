@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/FuriKuri/slack-git-command/issues"
   },
-  "homepage": "https://github.com/FuriKuri/slack-git-command#readme"
+  "homepage": "https://github.com/FuriKuri/slack-git-command#readme",
+  "dependencies": {
+    "restify": "^4.0.4"
+  }
 }
