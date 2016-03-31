@@ -3,6 +3,7 @@ var restify = require('restify');
 function respond(req, res, next) {
   res.send(
   	{
+  		"response_type": "in_channel",
 	    "text": "It's 80 degrees right now.",
 	    "attachments": [
 	        {
