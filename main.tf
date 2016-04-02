@@ -2,11 +2,11 @@ provider "digitalocean" {
     token = "${var.do_token}"
 }
 
-resource "digitalocean_droplet" "docker" {  
+resource "digitalocean_droplet" "slack" {  
     image = "docker"
-    name = "docker"
+    name = "slack-git"
     region = "fra1"
-    size = "1gb"
+    size = "512mb"
     ssh_keys = [
     	"${var.ssh_fingerprint}"
     ]
@@ -16,15 +16,14 @@ resource "digitalocean_droplet" "docker" {
     }
     provisioner "remote-exec" {
         inline = [
-           "docker run -d --name world furikuri/terra-world",
-           "docker run -d -p 8080:8080 --name hello --link world:world furikuri/terra-hello",
+           "docker run -d --name slack-command -p 80:8080 furikuri/slack-git-command",
         ]
     }
 }
 
-resource "digitalocean_record" "terra" {
+resource "digitalocean_record" "slack-record" {
     domain = "furikuri.net"
     type = "A"
-    name = "terra"
-    value = "${digitalocean_droplet.docker.ipv4_address}"
+    name = "slack"
+    value = "${digitalocean_droplet.slack.ipv4_address}"
 }
