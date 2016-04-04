@@ -4,7 +4,7 @@
   "description": "Simple web service for slack command",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/jasmine-node spec",
     "start": "node index.js"
   },
   "repository": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/FuriKuri/slack-git-command#readme",
   "dependencies": {
+    "jasmine-node": "^1.14.5",
     "restify": "^4.0.4"
   }
 }

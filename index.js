@@ -1,21 +1,10 @@
 var restify = require('restify');
+var handler = require('./app');
 
-function respond(req, res, next) {
-  res.send(
-  	{
-  		"response_type": "in_channel",
-	    "text": "It's 80 degrees right now.",
-	    "attachments": [
-	        {
-	            "text":"Partly cloudy today and tomorrow"
-	        }
-	    ]
-	});
-  next();
-}
+console.log(handler);
 
 var server = restify.createServer();
-server.get('/', respond);
+server.get('/', handler);
 
 server.listen(8080, function() {
   console.log('%s listening at %s', server.name, server.url);
